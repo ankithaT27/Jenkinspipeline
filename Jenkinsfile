@@ -16,7 +16,7 @@ Stage('Build')
 {
 Steps
 {
-Sh -node --version'
+sh -node --version'
 }
 }
 }
