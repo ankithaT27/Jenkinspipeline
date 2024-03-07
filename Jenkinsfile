@@ -2,7 +2,9 @@ pipeline
 {
 agent
 {
-docker{image'node:16-alpine'}
+docker{
+  sudo su
+  image'node:16-alpine'}
 }
 
 stages
