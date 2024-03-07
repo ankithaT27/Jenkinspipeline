@@ -3,6 +3,7 @@ FROM python:3.9-slim
 
 # Set the working directory in the container
 WORKDIR /app
+RUN 
 
 # install required packages for system
 RUN apt-get update \
@@ -21,4 +22,5 @@ RUN pip install mysqlclient
 #COPY . .
 
 # Specify the command to run your application
-CMD ["python", "app.py"]
+ENTRYPOINT ["python", "app.py"]
+
