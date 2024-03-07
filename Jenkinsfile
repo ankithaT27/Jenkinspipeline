@@ -1,20 +1,15 @@
 pipeline
 {
-Agent
+agent
 {
-Docker
-{
-Image
-{
- 'node:16-alpine'
-}
+docker{image'node:16-alpine'}
 }
 
-Stages
+stages
 {
-Stage('Build')
+stage('Build')
 {
-Steps
+steps
 {
 sh '-node --version'
 }
