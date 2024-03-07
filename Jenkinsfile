@@ -1,9 +1,9 @@
 pipeline
 {
+sh 'sudo su'
 agent
 {
 docker{
-  sudo su
   image'node:16-alpine'}
 }
 
