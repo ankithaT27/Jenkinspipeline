@@ -1,17 +1,21 @@
-pipeline {
-  agent {
-    docker { image 'node:16-alpine' }
-  }
-  stages {
-    stage('Deploy') {
-      steps {
-        sh 'node --version'
+pipeline{
+  agent any
+
+  stages{
+    stage('Checkout'){
+      steps
+      {
+      echo "Checkout code from git"
+      git url: "https://github.com/ankithaT27/Jenkinspipeline.git" , branch:"master"
       }
     }
-  stage('Test'){
-     steps {
-       echo "hi"
+
+    stage('Build'){
+      steps
+      {
+        echo "build docker file"
+        sh "docker build . -t my-note-app"
+      }
+    }
+
   }
-  }
-}
-}
